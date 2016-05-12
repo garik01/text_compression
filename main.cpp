@@ -43,5 +43,7 @@ string unpacking(string stroka) {
 }
 double coeff(string stroka1, string stroka2)
 {
-	return stroka1.length() / stroka2.length();
+	double a = stroka1.length();
+	double b = stroka2.length();
+	return a / b;
 }
