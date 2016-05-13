@@ -4,18 +4,16 @@ string precompression(string stroka);
 string unpacking(string stroka);
 double coeff(string stroka1, string stroka2);
 
-int main(int argc, char* argv[]) {
+int main() {
 	background();
-	// Начало программы
 
 	string str;
 	cout << "ВВедите строку: " ;
 	cin >> str;
-	cout << precompression(str) << endl;
+	cout << "Сжатая строка: " << precompression(str) << endl;
 	cout << "Коэффициент сжатия: " << coeff(str, precompression(str)) << endl;
+	cout << "Расжатая строка: " << unpacking(precompression(str)) << endl;
 
-
-	// Конец программы
 	system("pause");
 	return 0;
 }
@@ -39,11 +37,24 @@ string precompression(string stroka) {
 	return stroka2;
 }
 string unpacking(string stroka) {
-	return 0;
+	string str = "";
+	for (int i = 0; i < stroka.length(); i++)
+	{
+		if (stroka[i] > 47 & stroka[i] < 57)
+		{
+			for (int j = 0; j < (int)stroka[i] - 49; j++)
+			{
+				str = str + stroka[i + 1];
+			}
+		}
+		else
+		{
+			str = str + stroka[i];
+		}
+	}
+	return str;
 }
 double coeff(string stroka1, string stroka2)
 {
-	double a = stroka1.length();
-	double b = stroka2.length();
-	return a / b;
+	return static_cast<double>(stroka1.length())/stroka2.length();
 }
