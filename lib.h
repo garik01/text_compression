@@ -6,7 +6,8 @@
 
 using namespace std;
 
-void background() {
+void background() 
+{
 	system("color 2F");
 	setlocale(LC_ALL, "Russian");
 }
