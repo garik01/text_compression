@@ -4,7 +4,8 @@ string precompression(string stroka);
 string unpacking(string stroka);
 double coeff(string stroka1, string stroka2);
 
-int main() {
+int main() 
+{
 	background();
 
 	string str;
@@ -18,7 +19,8 @@ int main() {
 	return 0;
 }
 
-string precompression(string stroka) {
+string precompression(string stroka) 
+{
 	string stroka2;
 	for (int i = 0; i < stroka.length(); i++)
 	{
@@ -36,7 +38,8 @@ string precompression(string stroka) {
 	}
 	return stroka2;
 }
-string unpacking(string stroka) {
+string unpacking(string stroka) 
+{
 	string str = "";
 	for (int i = 0; i < stroka.length(); i++)
 	{
